@@ -1,8 +1,15 @@
 {
   "version": 2,
   "builds": [
-      {"src": "evalFlaskUploading/app.py", "use": "@vercel/python"},
-      {"src": "evalFlaskUploading/*.json", "use": "@vercel/static"}
+      {
+          "src": "./app.py",
+          "use": "@vercel/python"
+      }
   ],
-  "routes": [{"src": "/(.*)", "dest": "evalFlaskUploading/app.py"}]
+  "routes": [
+      {
+          "src": "/(.*)",
+          "dest": "/"
+      }
+  ]
 }
