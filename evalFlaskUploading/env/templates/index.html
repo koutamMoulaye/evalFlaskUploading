@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload et Conversion PDF</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Upload et Conversion PDF</h1>
+        <form action="/upload" method="post" enctype="multipart/form-data">
+            <label for="file" class="custom-file-upload">
+                <span id="file-name">Sélectionnez un fichier</span>
+            </label>
+            <input type="file" name="file" id="file" required onchange="updateFileName()">
+            <br>
+            <button type="submit">Uploader et Convertir en PDF</button>
+        </form>
+
+        <script>
+            function updateFileName() {
+                var input = document.getElementById('file');
+                var fileName = document.getElementById('file-name');
+
+                fileName.textContent = input.files[0].name;
+            }
+        </script>
+    </div>
+</body>
+</html>
